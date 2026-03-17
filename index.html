@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Beats AI</title>
+    <title>AI Music Generator - Latin Edition</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/dist/magentamusic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Music Gen v1.0</h1>
-        <button id="playBtn">Generar Secuencia</button>
-        <div id="visualizer"></div>
+    <div class="app-container">
+        <header>
+            <h1>Generador AI</h1>
+            <p>Reggaetón & Regional Mexicano</p>
+        </header>
+
+        <div class="controls">
+            <select id="genreSelect">
+                <option value="REGGAETON">Reggaetón (Dembow)</option>
+                <option value="REGIONAL">Regional (Banda/Corrido)</option>
+                <option value="TRAP">Trap Latino</option>
+            </select>
+            
+            <button id="generateBtn">✨ GENERAR BEAT</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+
+        <div class="status">
+            <span id="statusText">Listo para crear...</span>
+        </div>
+        
+        <canvas id="visualizer"></canvas>
     </div>
     <script src="script.js"></script>
 </body>
